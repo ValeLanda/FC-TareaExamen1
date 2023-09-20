@@ -13,11 +13,11 @@ import importlib
 
 
 def load_timeseries(ric):
-    directory = '' # poner la ruta de la carpeta FilesCSV una vez clonado el repositorio
+    directory = 'FilesCSV/'
     path = directory + ric + '.csv' 
     raw_data = pd.read_csv(path)
     t = pd.DataFrame()
-    t['date'] = pd.to_datetime(raw_data['Date'], dayfirst=True)
+    t['date'] = pd.to_datetime(raw_data['Date'],yearfirst=True)
     t['close'] = raw_data['Close']
     t = t.sort_values(by='date', ascending=True)
     t['close_previous'] = t['close'].shift(1)

@@ -69,7 +69,3 @@ def generate_dataframe_distributions(rics, metrics):
     # ...
     #tu código termina aquí
     return df
-
-
-df_2_3 = generate_dataframe_distributions_solution(rics, metrics)
-
